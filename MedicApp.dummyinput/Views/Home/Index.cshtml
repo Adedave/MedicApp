@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div>
+    <p><a asp-action="AddHospital" asp-controller="Hospital">Add Hospital</a></p>
+    <p><a asp-action="AddEnrollee" asp-controller="Enrollee">Add Enrollee</a></p>
+    <p><a asp-action="AddDisease" asp-controller="Disease">Add Disease</a></p>
+    <p><a asp-action="LGA" asp-controller="Enrollee" asp-route-id="1">LGA Enrollee List Tests</a></p>
+
+    @using (Html.BeginForm("AddDisease", "Disease", FormMethod.Post))
+    {
+
+
+
+        <div class="form-body">
+            <h3 class="form-section">LGA Search Info</h3>
+            <div class="row">
+                @*<div class="col-md-12">
+                        <div class="form-group">
+                            <label>Id</label>
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+                        </div>
+                    </div>*@
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Id</label>
+
+                       <input type="number" name="lgaid" />
+                    </div>
+                </div>
+
+                @*<div class="col-md-12">
+                        <div class="form-group">
+                            <label>Enrollee Id</label>
+
+                            @Html.TextBoxFor(m => m.EnrolleeId, new { @class = "form-control" })
+                        </div>
+                    </div>*@
+
+
+                <!--/span-->
+            </div>
+            <!--/row-->
+
+        </div>
+
+        <div class="form-actions right">
+            <a class="btn btn-default  " href="@Url.Action("Index", "Enrollee", new { area = "Admin" })"><i class="fa fa-times"></i>Cancel </a>
+
+            <button type="submit" value="LGA" class="btn blue"><i class="fa fa-check"></i>Save</button>
+        </div>
+
+    }
+</div>
+<div>
+    <p><a asp-action="Index" asp-controller="Hospital">View Hospitals</a></p>
+    <p><a asp-action="Index" asp-controller="Enrollee">View Enrollees</a></p>
+    <p><a asp-action="Index" asp-controller="Disease">View Diseases</a></p>
+    <p><a asp-action="Index" asp-controller="Map">View Map</a></p>
+
+
+</div>

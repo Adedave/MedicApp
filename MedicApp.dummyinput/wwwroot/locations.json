@@ -1,0 +1,266 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3414,
+          6.5273
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Mushin LGA"
+
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3784,
+          6.557
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Kosofe LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3339,
+          6.4555
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ajeromi-Ifelodun LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3439,
+          6.498
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Surulere LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3209,
+          6.618
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Agege LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1579,
+          6.4619
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ojo LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.257,
+          6.5744
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Alimosho LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5105,
+          6.6194
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ikorodu LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3246,
+          6.5313
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Oshodi-Isolo LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2885,
+          6.4292
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Amuwo-Odofin LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3515,
+          6.6018
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ikeja LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3781,
+          6.5059
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Lagos Mainland LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3842,
+          6.5392
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Somolu LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8876,
+          6.4316
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Badagry LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3641,
+          6.4446
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Apapa LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.4246,
+          6.4549
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Lagos Island LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5965,
+          6.4963
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ibeju-Lekki LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.947,
+          6.6055
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Epe LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.6015,
+          6.459
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Eti-Osa LGA"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2885,
+          6.685
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Ifako-Ijaiye LGA"
+      }
+    }
+  ]
+}

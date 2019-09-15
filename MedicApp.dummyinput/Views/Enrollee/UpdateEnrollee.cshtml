@@ -1,0 +1,80 @@
+﻿@model EnrolleeModel
+@{
+    ViewData["Title"] = "UpdateEnrollee";
+    
+}
+
+<h1>Update Enrollee</h1>
+
+
+@using (Html.BeginForm("UpdateEnrollee", "Enrollee", FormMethod.Post))
+{
+
+
+
+    <div class="form-body">
+        <h3 class="form-section">Update Enrollee Info</h3>
+        <div class="row">
+            @*<div class="col-md-12">
+            <div class="form-group">
+                <label>Id</label>
+                @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+            </div>
+        </div>*@
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Enrollee Age</label>
+
+                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Enrollee Gender</label>
+
+                    @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Enrollee Height</label>
+
+                    @Html.TextBoxFor(m => m.Height, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Enrollee Weight</label>
+
+                    @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Enrollee Lga</label>
+
+                    @Html.TextBoxFor(m => m.Lga, new { @class = "form-control" })
+                </div>
+            </div>
+
+
+
+            <!--/span-->
+        </div>
+        <!--/row-->
+
+    </div>
+
+
+    <div class="form-actions right">
+        <a class="btn btn-default  " href="@Url.Action("Index", "Enrollee")"><i class="fa fa-times"></i>Cancel </a>
+
+        <button type="submit" value="UpdateEnrollee" class="btn blue"><i class="fa fa-check"></i>Update</button>
+    </div>
+
+}

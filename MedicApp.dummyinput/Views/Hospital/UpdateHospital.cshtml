@@ -1,0 +1,72 @@
+﻿@model HospitalModel
+@{
+    ViewData["Title"] = "UpdateHospital";
+    
+}
+
+<h1>Update Hospital</h1>
+
+
+@using (Html.BeginForm("UpdateHospital", "Hospital", FormMethod.Post))
+{
+
+
+
+    <div class="form-body">
+        <h3 class="form-section">Update Hospital Info</h3>
+        <div class="row">
+            @*<div class="col-md-12">
+            <div class="form-group">
+                <label>Id</label>
+                @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+            </div>
+        </div>*@
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Hospital Name</label>
+
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Hospital Location</label>
+
+                    @Html.TextBoxFor(m => m.LocationId, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Hospital Lga</label>
+
+                    @Html.TextBoxFor(m => m.Lga, new { @class = "form-control" })
+                </div>
+            </div>s
+
+
+
+
+
+
+
+
+
+
+            <!--/span-->
+        </div>
+        <!--/row-->
+
+    </div>
+
+
+    <div class="form-actions right">
+        <a class="btn btn-default  " href="@Url.Action("Index", "Hospital")"><i class="fa fa-times"></i>Cancel </a>
+
+        <button type="submit" value="UpdateHospital" class="btn blue"><i class="fa fa-check"></i>Update</button>
+    </div>
+
+}

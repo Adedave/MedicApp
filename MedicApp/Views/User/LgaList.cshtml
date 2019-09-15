@@ -1,0 +1,102 @@
+﻿@{
+    //ViewData["Title"] = "Manage Enrollees";
+}
+@model List<MapLgaModel>
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<div class="text-center">
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group">
+
+                       @* <a class="nav-link text-dark" asp-area="" asp-controller="Enrollee" asp-action="AddEnrollee">Add New Enrollee</a>*@
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <table class="table table-striped table-bordered table-hover" id="sample_3">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        LgaId
+                    </th>
+                    <th>
+                        Lga Name
+                    </th>
+                    <th>
+                        Enrollees Count
+                    </th>
+                    <th>
+                        Male Enrollees Count
+                    </th>
+                    <th>
+                        Female Enrollees Count
+                    </th>
+                    <th>
+                        Hospital Count
+                    </th>
+                    <th>
+                        Top Three Diseases
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{ foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.LgaId
+                            </td>
+                            <td>
+                                @item.LgaName
+                            </td>
+                            <td>
+                                @item.EnrolleesCount
+                            </td>
+                            <td>
+                                @item.MaleEnrolleesCount
+                            </td>
+                            <td>
+                                @item.FemaleEnrolleesCount
+                            </td>
+                            <td>
+                                @item.HospitalCount
+                            </td>
+                            <td>
+                                @item.TopThreeDiseases
+                            </td>
+                            @*@{ foreach (var disease in item.Diseases)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @disease.DiseaseName
+                                            </td>
+                                        </tr>
+                                    }
+                                }*@
+                            
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+</div>

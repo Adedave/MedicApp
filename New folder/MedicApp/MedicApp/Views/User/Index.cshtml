@@ -1,0 +1,184 @@
+﻿@model EnrolleeModel
+@{ 
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tab UI</title>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+    <link rel="stylesheet" href="~/user/css/style.css">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>@TempData["Username"]</h1>
+        </header>
+        <nav>
+            <ul>
+                <li class="gnav1">Home</li>
+                <li class="gnav2">Age</li>
+                <li class="gnav3">Age Range</li>
+                <li class="gnav4">Gender</li>
+                <li class="gnav4">LGA </li>
+                <li class="gnav4">Disease</li>
+               
+            </ul>
+        </nav>
+        <div class="contents" id="contents">
+            <div class="container">
+                <article id="page1" class="show top">
+                    <section>
+                        <h1>Welcome @TempData["Username"] </h1>
+                        <p>This your dashboard.</p>
+                    </section>
+                </article>
+                <article id="page2">
+                    <section>
+                        <h1>Age</h1>
+                        @using (Html.BeginForm("Age", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE AGE OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>AGE</label>
+                                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Age" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                             </div>
+                                }
+                        </section>
+                </article>
+                <article id="page3">
+                    <section>
+                        <h1>Age Range</h1>
+                        @using (Html.BeginForm("AgeRange", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE AGE RANGE OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>MINIMUM AGE</label>
+                                            <input type="number" name="minAge" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>MAXIMUM AGE</label>
+                                            <input type="number" name="maxAge" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="AgeRange" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                    </section>
+                </article>
+                <article id="page4">
+                    <section>
+                        <h1>Gender</h1>
+                        @using (Html.BeginForm("Gender", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE GENDER(MALE OR FEMALE) OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>GENDER</label>
+                                            @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Gender" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                    </section>
+                </article>
+                <article id="page5">
+                    <section>
+                        <h1>LGA</h1>
+                        @using (Html.BeginForm("LGA", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE LGA OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>LGA</label>
+                                            @Html.TextBoxFor(m => m.LGA, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="LGA" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                    </section>
+                </article>
+                <article id="page6">
+                    <section>
+                        <h1>Disease</h1>
+                        @using (Html.BeginForm("Disease", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE SELECT DISEASE OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>DISEASE</label>
+                                            @Html.DropDownList("diseaseid", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllDiseases(), "Id", "DiseaseName"), "Select  Disease", new { id = "diseaseid", @class = "validate-select" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Disease" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+
+    <script src="~/user/js/index.js"></script>
+
+</body>
+</html>

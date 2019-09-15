@@ -1,0 +1,378 @@
+﻿@model EnrolleeModel
+@{ 
+    ViewData["Title"] = "Dashboard";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="~/js/sanitize-html/dist/sanitize-html.js"></script>
+    
+    <meta charset="UTF-8">
+    <title>Tab UI</title>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="~/user/css/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>@TempData["Username"]</h1>
+            <partial name="_LoginPartial" />
+
+        </header>
+        <nav>
+            <ul>
+                <li class="gnav1" >Home</li>
+                <li class="gnav2" onclick="initialMap(1)">Age</li>
+                <li class="gnav3" onclick="initialMap(2)">Age Range</li>
+                <li class="gnav4" onclick="initialMap(3)">Gender</li>
+                <li class="gnav4" onclick="initialMap(4)">LGA </li>
+                <li class="gnav4" onclick="initialMap(5)">Disease</li>
+
+            </ul>
+        </nav>
+        <div class="contents" id="contents">
+            <div class="container">
+                <article id="page1" class="show top">
+                    <section>
+                        <h1>Welcome @Context.User.Identity.Name </h1>
+                        <p>This your dashboard.</p>
+
+                        <div class="map" id="map" style="height: 700px; width: 1200px;"></div>
+                    </section>
+                </article>
+                <article id="page2">
+                    <section>
+                        <h1>Age</h1>
+                        @using (Html.BeginForm("Age", "Enrollee", FormMethod.Post))
+                        {
+                        <div class="form-body">
+                            <h3 class="form-section">PLEASE INPUT THE AGE OF THE ENROLLEE</h3>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>AGE</label>
+                                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>LGA</label>
+                                        @Html.DropDownList("lgaId", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllLgas(), "Id", "Name"), "Select  Lga", new { id = "lgaId", @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" name="startDate" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="date" name="endDate" />
+                                </div>
+                            </div>
+                        </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Age" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                        <div class="map" id="ageMap" style="height: 700px; width: 1200px;"></div>
+                    </section>
+                </article>
+                <article id="page3">
+                    <section>
+                        <h1>Age Range</h1>
+                        @using (Html.BeginForm("AgeRange", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE AGE RANGE OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>MINIMUM AGE</label>
+                                            <input type="number" name="minAge" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>MAXIMUM AGE</label>
+                                            <input type="number" name="maxAge" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>LGA</label>
+                                            @Html.DropDownList("lgaId", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllLgas(), "Id", "Name"), "Select  Lga", new { id = "lgaId", @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input type="date" name="startDate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>End Date</label>
+                                            <input type="date" name="endDate" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="AgeRange" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                            <div class="map" id="ageRangeMap" style="height: 700px; width: 1200px;"></div>
+
+                    </section>
+                </article>
+                <article id="page4">
+                    <section>
+                        <h1>Gender</h1>
+                        @using (Html.BeginForm("Gender", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE INPUT THE GENDER(MALE OR FEMALE) OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>GENDER</label>
+                                            @{ 
+                                                List<dynamic> list = new List<dynamic>()
+                                                {
+                                                    new { Id = 1, Name="Male" },
+                                                    new { Id = 2, Name="Female" }
+                                                };
+                                            }
+                                            @Html.DropDownList("genderId", new SelectList(list, "Id","Name"), "Select  Gender", new { id = "genderId", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>LGA</label>
+                                            @Html.DropDownList("lgaId", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllLgas(), "Id", "Name"), "Select  Lga", new { id = "lgaId", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input type="date" name="startDate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>End Date</label>
+                                            <input type="date" name="endDate" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Gender" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                            <div class="map" id="genderMap" style="height: 700px; width: 1200px;"></div>
+
+                    </section>
+                </article>
+                <article id="page5">
+                    <section>
+                        <h1>LGA</h1>
+                        @using (Html.BeginForm("LGA", "Enrollee", FormMethod.Post))
+                        {
+                        <div class="form-body">
+                            <h3 class="form-section">PLEASE SELECT THE LGA OF THE ENROLLEE</h3>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>LGA</label>
+                                        @Html.DropDownList("lgaId", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllLgas(), "Id", "Name"), "Select  Lga", new { id = "lgaId", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input type="date" name="startDate" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="date" name="endDate" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="LGA" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                            <div class="map" id="lgaMap" style="height: 700px; width: 1200px;"></div>
+
+                    </section>
+                </article>
+                <article id="page6">
+                    <section>
+                        <h1>Disease</h1>
+                        @using (Html.BeginForm("Disease", "Enrollee", FormMethod.Post))
+                        {
+                            <div class="form-body">
+                                <h3 class="form-section">PLEASE SELECT DISEASE OF THE ENROLLEE</h3>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>DISEASE</label>
+                                            @Html.DropDownList("diseaseid", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllDiseases(), "Id", "DiseaseName"), "Select  Disease", new { id = "diseaseid", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>LGA</label>
+                                            @Html.DropDownList("lgaId", new SelectList(await MedicApp.Controllers.EnrolleeController.RetrieveAllLgas(), "Id", "Name"), "Select  Lga", new { id = "lgaId", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input type="date" name="startDate" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>End Date</label>
+                                            <input type="date" name="endDate" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-actions right">
+                                <button type="submit" value="Disease" class="btn blue"><i class="fa fa-check"></i>Search</button>
+                            </div>
+                        }
+                            <div class="map" id="diseasesMap" style="height: 700px; width: 1200px;"></div>
+
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+    <script asp-append-version="true">
+        // Initialize and add the map
+        function initialMap(par1) {
+            if (par1 === undefined) {
+                par1 = 0;
+            } 
+            const map = new google.maps.Map(document.getElementsByClassName('map')[par1], {
+                zoom: 12,
+                center: { lat: 6.5244, lng: 3.3792 }
+            });
+            
+
+            // Load the stores GeoJSON onto the map.
+            map.data.loadGeoJson('locations.json');
+
+            // Define the custom marker icons, using the store's "category".
+            map.data.setStyle(feature => {
+                return {
+                    icon: {
+                        url: `img/icons8-visit-160.png`,
+                        scaledSize: new google.maps.Size(30, 30)
+                    }
+                };
+            });
+
+            const apiKey = 'AIzaSyCVR_WEhrJWsg5R6A3MPLoDvHx_af5R2vg';
+            const infoWindow = new google.maps.InfoWindow();
+            infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, 0) });
+
+            // Show the information for a store when its marker is clicked.
+            map.data.addListener('click', event => {
+
+                //const category = event.feature.getProperty('category');
+                const name = event.feature.getProperty('name');
+                const patientCount = event.feature.getProperty('patientCount');
+                const maleCount = event.feature.getProperty('maleCount');
+                const femaleCount = event.feature.getProperty('femaleCount');
+                const hospitalCount = event.feature.getProperty('hospitalCount'); 
+                var diseases = event.feature.getProperty('diseases'); 
+                
+                const diseaseName1 = diseases[0].name;
+                const diseaseName2 = diseases[1].name;
+                const diseaseName3 = diseases[2].name;
+                const diseaseMaleCount1 = diseases[0].maleCount;
+                const diseaseMaleCount2 = diseases[1].maleCount;
+                const diseaseMaleCount3 = diseases[2].maleCount;
+                const diseaseFemaleCount1 = diseases[0].femaleCount;
+                const diseaseFemaleCount2 = diseases[1].femaleCount;
+                const diseaseFemaleCount3 = diseases[2].femaleCount;
+
+                const position = event.feature.getGeometry().get();
+                var sed = `<div>
+                <h3 style="color:black;"> ${name}</h3 >
+                <p style="color:black;">Total number of diagnosed enrollees in this LGA is ${patientCount}.<br>
+                   With ${maleCount} males and ${femaleCount} females.<br>
+                   Total number of hospitals are ${hospitalCount}. <br>
+                   And the top three diseases are:
+                   <ul>
+                    <li style="color:black;">${diseaseName1} with ${diseaseMaleCount1} males and ${diseaseFemaleCount1} females</li>
+                    <li style="color:black;">${diseaseName2} with ${diseaseMaleCount2} males and ${diseaseFemaleCount2} females</li>
+                    <li style="color:black;">${diseaseName3} with ${diseaseMaleCount3} males and ${diseaseFemaleCount3} females</li>
+                </p>
+                <a href="#" style="color:blue;">Click here to view more details about ${name}</a>
+                </div >`;
+
+                //var sed = `<div >
+                //    <h2> ${ name}</h2 >
+                //    <h2> ${ name}</h2 >                    
+                //    </div >`
+
+                infoWindow.setContent(sed);
+                infoWindow.setPosition(position);
+                infoWindow.open(map);
+            });
+        }
+
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVR_WEhrJWsg5R6A3MPLoDvHx_af5R2vg&callback=initialMap"
+            async defer></script>
+    <script src="~/user/js/index.js"></script>
+
+</body>
+</html>

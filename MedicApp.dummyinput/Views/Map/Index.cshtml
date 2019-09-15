@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="~/js/sanitize-html/dist/sanitize-html.js"></script>
+    
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script >
+        // Initialize and add the map
+        function initialMap() {
+            //// The location of Lagos
+            //var lagos = {
+          
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: 6.5244, lng: 3.3792 }
+            });
+            
+            // Load the stores GeoJSON onto the map.
+            map.data.loadGeoJson('locations.json');
+
+            // Define the custom marker icons, using the store's "category".
+            map.data.setStyle(feature => {
+                return {
+                    icon: {
+                        url: `img/icons8-visit-160.png`,
+                        scaledSize: new google.maps.Size(30, 30)
+                    }
+                };
+            });
+
+            const apiKey = 'AIzaSyCVR_WEhrJWsg5R6A3MPLoDvHx_af5R2vg';
+            const infoWindow = new google.maps.InfoWindow();
+            infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, 0) });
+
+            // Show the information for a store when its marker is clicked.
+            map.data.addListener('click', event => {
+
+                //const category = event.feature.getProperty('category');
+                const name = event.feature.getProperty('name');
+                //const description = event.feature.getProperty('description');
+                //const hours = event.feature.getProperty('hours');
+                //const phone = event.feature.getProperty('phone');
+                const position = event.feature.getGeometry().get();
+                var sed = `<div >
+                    <h2> ${ name}</h2 >
+                    <h2> ${ name}</h2 >                    
+                    </div >`;
+      
+                //const content = sanitizeHTML(sed);
+
+                infoWindow.setContent(sed);
+                infoWindow.setPosition(position);
+                infoWindow.open(map);
+            });
+        }
+       
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script 
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVR_WEhrJWsg5R6A3MPLoDvHx_af5R2vg&callback=initialMap"
+   async defer  ></script>
+   
+</body>
+
+</html>

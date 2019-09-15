@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": null,
+        "age": 15,
+        "gender": "male",
+        "height": 125.0,
+        "weight": 50.0,
+        "phoneNumber": null,
+        "address": null,
+        "lga": null,
+        "hospitalId": 1,
+        "hospital": {
+            "id": 1,
+            "name": "National Orthopaedic Hospita",
+            "officePhoneNumber": null,
+            "address": null,
+            "lga": null,
+            "locationId": 1,
+            "location": null,
+            "enrollees": null
+            }
+    }
+]

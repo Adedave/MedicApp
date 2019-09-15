@@ -1,0 +1,705 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3414,
+          6.5273
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ],
+        "femaleCount": 8,
+        "hospitalCount": 1,
+        "maleCount": 8,
+        "id": 1,
+        "name": "Mushin LGA",
+        "patientCount": 20
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3784,
+          6.557
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "name": "Kosofe LGA",
+        "patientCount": 40,
+        "maleCount": 15,
+        "femaleCount": 21,
+        "hospitalCount": 2,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3339,
+          6.4555
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "name": "Ajeromi-Ifelodun LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3439,
+          6.498
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "name": "Surulere LGA",
+        "patientCount": 20,
+        "maleCount": 8,
+        "femaleCount": 10,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3209,
+          6.618
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "name": "Agege LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1579,
+          6.4619
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "name": "Ojo LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.257,
+          6.5744
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "name": "Alimosho LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5105,
+          6.6194
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "name": "Ikorodu LGA",
+        "patientCount": 20,
+        "maleCount": 7,
+        "femaleCount": 11,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3246,
+          6.5313
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "name": "Oshodi-Isolo LGA",
+        "patientCount": 20,
+        "maleCount": 8,
+        "femaleCount": 9,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2885,
+          6.4292
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Amuwo-Odofin LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3515,
+          6.6018
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "Ikeja LGA",
+        "patientCount": 80,
+        "maleCount": 43,
+        "femaleCount": 27,
+        "hospitalCount": 4,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3781,
+          6.5059
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "Lagos Mainland LGA",
+        "patientCount": 20,
+        "maleCount": 9,
+        "femaleCount": 8,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3842,
+          6.5392
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "name": "Somolu LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8876,
+          6.4316
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "name": "Badagry LGA",
+        "patientCount": 20,
+        "maleCount": 9,
+        "femaleCount": 9,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3641,
+          6.4446
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "name": "Apapa LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.4246,
+          6.4549
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "name": "Lagos Island LGA",
+        "patientCount": 60,
+        "maleCount": 31,
+        "femaleCount": 23,
+        "hospitalCount": 3,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5965,
+          6.4963
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "name": "Ibeju-Lekki LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.947,
+          6.6055
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "name": "Epe LGA",
+        "patientCount": 0,
+        "maleCount": 0,
+        "femaleCount": 0,
+        "hospitalCount": 0,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.6015,
+          6.459
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "name": "Eti-Osa LGA",
+        "patientCount": 60,
+        "maleCount": 24,
+        "femaleCount": 26,
+        "hospitalCount": 3,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2885,
+          6.685
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "Ifako-Ijaiye LGA",
+        "patientCount": 20,
+        "maleCount": 8,
+        "femaleCount": 10,
+        "hospitalCount": 1,
+        "diseases": [
+          {
+            "name": "Malaria",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "Typhoid",
+            "maleCount": 12,
+            "femaleCount": 13
+          },
+          {
+            "name": "ChickenPox",
+            "maleCount": 12,
+            "femaleCount": 13
+          }
+        ]
+      }
+    }
+  ]
+}

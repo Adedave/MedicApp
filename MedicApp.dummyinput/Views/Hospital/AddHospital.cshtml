@@ -1,0 +1,83 @@
+﻿@model HospitalModel
+@{
+    ViewData["Title"] = "AddHospital";
+}
+
+<h1>AddHospital</h1>
+
+@using (Html.BeginForm("AddHospital", "Hospital", FormMethod.Post))
+{
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-body">
+        <h3 class="form-section">New Hospital Info</h3>
+        <div class="row">
+            @*<div class="col-md-12">
+                    <div class="form-group">
+                        <label>Id</label>
+                        @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+                    </div>
+                </div>*@
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Hospital Name</label>
+
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Hospital Location</label>
+                    @Html.DropDownList("locationId", new SelectList(await MedicApp.dummyinput.Controllers.HospitalController.RetrieveAllLocations(), "Id", "Name"), "Select  Location", new { id = "locationId", @class = "validate-select" })
+
+                    @*@Html.TextBoxFor(m => m.LocationId, new { @class = "form-control" })*@
+                </div>
+            </div>
+
+            @*<div class="col-md-12">
+                    <div class="form-group">
+                        <label>Hospital Lga</label>
+
+                        @Html.TextBoxFor(m => m.Lga, new { @class = "form-control" })
+                    </div>
+                </div>*@
+
+
+
+
+
+
+
+
+
+            <!--/span-->
+        </div>
+        <!--/row-->
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-actions right">
+        <a class="btn btn-default  " href="@Url.Action("Index", "Hospital", new { area = "Admin" })"><i class="fa fa-times"></i>Cancel </a>
+
+        <button type="submit" value="AddHospital" class="btn blue"><i class="fa fa-check"></i>Save</button>
+    </div>
+
+}

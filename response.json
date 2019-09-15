@@ -1,0 +1,18 @@
+[
+    {
+        "id": 39,
+        "name": null,
+        "age": 25,
+        "gender": "male",
+        "height": 186.0,
+        "weight": 98.0,
+        "phoneNumber": null,
+        "address": null,
+        "lga": "Mushin",
+        "hospitalId": 1,
+        "hospital": null,
+        "diseases": [
+            {
+                "enrolleeId": 39,
+                "diseaseId": 6,
+                "dateDiseaseDiagnosed": "2019-05-17T07:58:01"
